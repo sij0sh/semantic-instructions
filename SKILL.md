@@ -4,8 +4,4 @@ description: Create, edit, review, or simplify instructions for AI agents, inclu
 disable-model-invocation: true
 ---
 
-Frame: read the target, its direct references, and [details](references/details.md). Identify the requested operation, target format, intended outcome, constraints, and unknowns.
-
-Compose: write the smallest instruction set that preserves the intended outcome and constraints. Use the target format; give each instruction one responsibility. Split only for focus, verification, or control.
-
-Challenge: name a compliant-but-failing case, or give evidence ruling out a plausible case. Remove rules with no behavioral effect. Revise only demonstrated defects; stop when no material defect remains or after two revision passes. Report unresolved risks.
+Set `S` to this skill's absolute directory. From the task project run `python3 "$S/scripts/semantic_flow.py" --request '<request>'`; follow each printed prompt and submit JSON through its printed command. Bare invocation resumes. The engine routes Frame → Compose → Challenge; read [details](references/details.md) when prompted. Do not write before challenge passes.
